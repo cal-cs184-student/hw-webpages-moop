@@ -28,7 +28,7 @@
 	<body>
 		<div class="container">
 		<h1>CS184/284A Spring 2025 Homework 1 Write-Up</h1>
-		<div style="text-align: center;">Names: </div>
+		<div style="text-align: center;">Names: Catherine Jin</div>
 
 		<br>
 
@@ -48,13 +48,25 @@
 		-->
 
 		<h2>Overview</h2>
-		Give a high-level overview of what you implemented in this homework. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the homework.
 		In this homework, I started with simple rasterization, using triangles to show the changes between normal rasterization and supersampling, which mediates jaggies. Then, I created a cute little robot man by transforming shapes! With translation, scaling, and rotation, anything is possible! Then moving onto colors... Previously everything was just one color, whether it be the triangles or the robot man. How boring! Now, with barycentric coordinates, I was able to complete a perfectly blended color wheel that shows a gradual gradient throughout. Lastly, we worked with textures. Adding pixel sampling and level sampling with mipmaps to see our pngs in all different forms.
 
 		<h2>Task 1: Drawing Single-Color Triangles</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		I rasterized the triangles by first calculating the bounds based on the parameters, getting a min and max bound for each x and y. When iterating through the pixels in the bounds, I first set the center at (.5,.5) as the instructions say. Then, with edge functions, I can check if each sample point is in the triangle formed by the three edges. If all three functions are positive or negative for a point, that means it is in the triangle, else, it is not. Lastly, I just use the fill_pixel() function to fill it in with the specified color if it is in bound.
 
-		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
+		My algorithm is no worse than one that checks each sample within the bounding box of the triangle. First, I create the bounding box before running the double for loop, which iterates each sample in the bounding box once. So this algorithm checks each sample within the bounding box once, and no more than that.
+
+		<p>Here is a screenshot of test4.svg, with the pixel inspector on the edge of the red triangle.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="task1.png" width="400px"/>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		<!-- <p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
@@ -78,7 +90,7 @@
 				</td>
 			  </tr>
 			</table>
-		</div>
+		</div> -->
 		
 		<h2>Task 2: Antialiasing by Supersampling</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
