@@ -53,11 +53,11 @@
 
 
 		<h2>Part 1: Ray Generation and Scene Intersection</h2>
-		Walk through the ray generation and primitive intersection parts of the rendering pipeline.
-		Explain the triangle intersection algorithm you implemented in your own words.
+		Camera::generate_ray(...) converts image coordinates (x, y) to a world-space ray. It maps (x,y) to camera space using the field of view, then transforms the direction using c2w. The ray originates from pos and is normalized, with near and far clipping planes (nClip, fClip).
 
-		In the ray-tracing rendering pipeline, we first go through ray generation then primitive intersection in order to create the image. 
+		The primitive intersection stage of the rendering pipeline determines how rays interact with scene geometry, such as spheres. When a ray is cast, its intersection with a sphere is computed by solving a quadratic equation derived from substituting the ray equation into the sphere equation. If the discriminant is non-negative, the ray intersects the sphere, and the smaller positive root gives the nearest intersection. The test function computes intersection times and checks if a hit occurs. The has_intersection function determines if a shadow ray hits the sphere, updating r.max_t accordingly. The intersect function records details such as hit point, surface normal, and material properties in an Intersection struct. This process is essential for shading and lighting calculations, ensuring accurate rendering of objects in the scene.
 
+		The triangle intersection algorithm I implemented is based on the Moller Trumbore method, which efficiently determines if a ray intersects a given triangle in 3D space. First, the algorithm computes two edge vectors, e1 and e2, from the triangle's vertices. Then, it calculates a determinant using the cross product of the ray direction and e2, followed by the dot product with e1. If the determinant is close to zero, the ray is nearly parallel to the triangle, so no intersection occurs. Otherwise, the algorithm computes the inverse determinant and uses it to find the barycentric coordinates u and v, ensuring they lie within the valid range (0 ≤ u, v ≤ 1 and u+v ≤ 1). If valid, it calculates the intersection time t along the ray and ensures it is within the ray's valid range. The has_intersection function only checks for intersection, while intersect records intersection details such as the hit point, interpolated normal (using barycentric weights), and material properties. This method is both efficient and widely used in ray tracing due to its minimal floating-point operations and lack of explicit division.
 
 		<p>Here, we show images with normal shading for a few small .dae files.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
