@@ -196,6 +196,7 @@
 		</div>
 
 		<p>For CBbunny.dae, render the mth bounce of light with max_ray_depth set to 0, 1, 2, 3, 4, and 5 (the -m flag), and isAccumBounces=false. Explain in your write-up what you see for the 2nd and 3rd bounce of light, and how it contributes to the quality of the rendered image compared to rasterization. Use 1024 samples per pixel. Then compare it to accumulated bounces</p>
+		<p>isAccumBounces = false NEED TO ADD</p>
 
 		<p>isAccumBounces = true</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
@@ -258,6 +259,43 @@
 				  <td style="text-align: center;">
 					<img src="pt4rr100.png" width="150px"/>
 					<figcaption>depth: 100</figcaption>
+				  </td>
+			  </tr>
+			</table>
+		</div>
+
+		<p>Wall-e renders. Compare rendered views with various sample-per-pixel rates, including at least 1, 2, 4, 8, 16, 64, and 1024. Use 4 light rays</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="walle1.png" width="150px"/>
+				  <figcaption>1 sample per pixel</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="walle2.png" width="150px"/>
+				  <figcaption>2 samples per pixel</figcaption>
+				</td>
+				<td style="text-align: center;">
+					<img src="walle4.png" width="150px"/>
+					<figcaption>4 samples per pixel</figcaption>
+				</td>
+				<td style="text-align: center;">
+					<img src="walle8.png" width="150px"/>
+					<figcaption>8 samples per pixel</figcaption>
+				  </td>
+
+				  <td style="text-align: center;">
+					<img src="walle16.png" width="150px"/>
+					<figcaption>16 samples per pixel</figcaption>
+				  </td>
+				  <td style="text-align: center;">
+					<img src="walle64.png" width="150px"/>
+					<figcaption>64 samples per pixel</figcaption>
+				  </td>
+				  <td style="text-align: center;">
+					<img src="walle1024.png" width="150px"/>
+					<figcaption>1024 samples per pixel</figcaption>
 				  </td>
 			  </tr>
 			</table>
