@@ -116,6 +116,22 @@
 
 		<p>In PathTracer::estimate_direct_lighting_importance, efficiency is improved by only sampling directions from actual light sources instead of uniformly over a hemisphere. For each light source in the scene, the function determines the number of samples (ns_area_light for area lights, 1 for delta lights). The light's sample_L function is used to generate a sample direction wi, compute the emitted radiance L_i, and determine the PDF. A shadow ray is then traced to check for occlusion. If the sample is not blocked, the contribution is computed using the BRDF, cosine term, and PDF. The function accumulates these values over multiple samples and averages them if the light is not a delta light. This method ensures that more samples are taken from important directions, leading to a more accurate and noise-free estimate of direct lighting.</p>
 
+		<p>Here, we compare hemisphere sampling vs importance sampling.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="bunnyhemisphere.png" width="400px"/>
+				  <figcaption>bunnyhemisphere</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="bunnyimportance.png" width="400px"/>
+				  <figcaption>bunnyimportance</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
 		<h2>Part 4: Global Illumination</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
