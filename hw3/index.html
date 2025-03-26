@@ -195,6 +195,42 @@
 			</table>
 		</div>
 
+		<p>For CBbunny.dae, render the mth bounce of light with max_ray_depth set to 0, 1, 2, 3, 4, and 5 (the -m flag), and isAccumBounces=false. Explain in your write-up what you see for the 2nd and 3rd bounce of light, and how it contributes to the quality of the rendered image compared to rasterization. Use 1024 samples per pixel. Then compare it to accumulated bounces</p>
+
+		<p>isAccumBounces = true</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="pt4m0.png" width="200px"/>
+				  <figcaption>0th bounce</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="pt4m1.png" width="200px"/>
+				  <figcaption>1st bounce</figcaption>
+				</td>
+				<td style="text-align: center;">
+					<img src="pt4m2.png" width="200px"/>
+					<figcaption>2nd bounce</figcaption>
+				</td>
+				<td style="text-align: center;">
+					<img src="pt4m3.png" width="200px"/>
+					<figcaption>3rd bounce</figcaption>
+				  </td>
+
+				  <td style="text-align: center;">
+					<img src="pt4m4.png" width="200px"/>
+					<figcaption>4th bounce</figcaption>
+				  </td>
+				  <td style="text-align: center;">
+					<img src="pt4m5.png" width="200px"/>
+					<figcaption>5th bounce</figcaption>
+				  </td>
+			  </tr>
+			</table>
+		</div>
+
+
 		<h2>Part 5: Adaptive Sampling</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
