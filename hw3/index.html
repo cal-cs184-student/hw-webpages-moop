@@ -198,9 +198,7 @@
 		</div>
 
 		<p>For CBbunny.dae, render the mth bounce of light with max_ray_depth set to 0, 1, 2, 3, 4, and 5 (the -m flag), and isAccumBounces=false. Explain in your write-up what you see for the 2nd and 3rd bounce of light, and how it contributes to the quality of the rendered image compared to rasterization. Use 1024 samples per pixel. Then compare it to accumulated bounces</p>
-		<p>isAccumBounces = false NEED TO ADD</p>
-
-		<p>isAccumBounces = true</p>
+		<p>The 2nd and 3rd bounce of light significantly improves the realism of the rendered image. Since with the second bounce, it starts capturing indirect illumination to enhance soft shadows and subtle color bleeding.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
