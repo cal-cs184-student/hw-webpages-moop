@@ -92,7 +92,23 @@
 		</div>
 		
 		<h2>Part 2: Bounding Volume Hierarchy</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		The BVH construction algorithm follows a recursive top-down approach, where each node in the tree represents an axis-aligned bounding box that encloses a subset of primitives. The construction begins by computing a bounding box around all primitives. If the number of primitives in the current node is less than or equal to the maximum leaf size, the node becomes a leaf containing those primitives. Otherwise, the algorithm selects a splitting axis based on the extent of the bounding box, choosing the longest axis to maximize separation. The splitting point is determined by computing the average centroid position of all primitives along the chosen axis. The primitives are then partitioned into two groups based on whether their centroids fall below or above the split point. If partitioning results in an empty or unbalanced split, the algorithm defaults to a median split. The process repeats recursively until all primitives are organized into leaf nodes. This heuristic helps improve spatial partitioning and traversal efficiency by ensuring a relatively balanced tree with well-separated bounding boxes.
+
+		<p>These are some renderings of the large .dae files.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="CBlucypt2.png" width="400px"/>
+				  <figcaption>CBlucy after part 2</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="maxplanckpt2.png" width="400px"/>
+				  <figcaption>maxplanck.png after part 2</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 
 		<h2>Part 3: Direct Illumination</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
