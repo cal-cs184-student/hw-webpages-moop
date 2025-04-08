@@ -103,7 +103,7 @@
 				  <figcaption>(2) with only shearing constraints</figcaption>
 				</td>
 				<td style="text-align: center;">
-					<img src="pt12.png" width="300px"/>
+					<img src="pt1-2.png" width="300px"/>
 					<figcaption>(3) with all constraints</figcaption>
 				  </td>
 			  </tr>
@@ -113,17 +113,49 @@
 		<h2>Part 2: Simulation via numerical integration</h2>
 		For this part, after I coded it, I experimented around with some parameters of the simulation to further understand it.
 
-		<p>When changing the spring constant ks, I noticed that the cloth fell almost like a piece of paper at 50000 N/m, and more fluidly and softer at 50 N/m. While I'm unable to capture this in a video, here is the hanging result of the two different spring constants, showing the difference in "hardness" of the cloth.</p>
+		<p>When changing the spring constant ks, I noticed that the cloth fell almost like a piece of paper at 50000 N/m, and more fluidly and softer at 50 N/m. While I'm unable to capture this in a video, here is the hanging result of the two different spring constants, showing the difference in "hardness" of the cloth. This is because the ks determines how strongly the springs try to return to their original position. So, when the value is high, the shape of the cloth more closely resembles its original shape; vice versa, when the value is low, the shape of the cloth strays farther from its original shape and becomes more bendy, since it has less strength to return to its original shape and falls more victim to gravity.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
 				<td style="text-align: center;">
 				  <img src="pt2-50.png" width="400px"/>
-				  <figcaption>50 N/m</figcaption>
+				  <figcaption>ks = 50 N/m</figcaption>
 				</td>
 				<td style="text-align: center;">
 				  <img src="pt2-50000.png" width="400px"/>
-				  <figcaption>50000 N/m</figcaption>
+				  <figcaption>ks = 50000 N/m</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		<p>When messing with the density constant. I found the results to be pretty intuitive so I will be brief about what I found. Essentially, the cloth just seemed lighter with a low density constant and heavier with a high density constant. When it is lighter, it fell slower and floated more. When it is heavier, it fell faster and sagged more between the two pin points.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="pt2denslow.png" width="400px"/>
+				  <figcaption>density = 1 g/cm^2</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="pt2denshigh.png" width="400px"/>
+				  <figcaption>density = 500 g/cm^2</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		<p>Lastly, when messing with the damping constant, I noticed the most change in the movement of the cloth. It fell slower at a higher damping constant and faster at a lower damping constant. I will not include a visual for this part since it is quite intuitive and also cannot easily be represented by a simple screenshot. So just picture a flowy cloth (high damping) versus a heavier cloth that doesn't bounce (low damping).</p>
+
+		<p>Here are some screenshots of the shaded cloth from scene/pinned4.json in its final resting state! The two screenshots are from slightly different angles to give a better idea of what the cloth looks like.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="pt2shaded1.png" width="400px"/>
+				</td>
+				<td style="text-align: center;">
+				  <img src="pt2shaded2.png" width="400px"/>
 				</td>
 			  </tr>
 			</table>
