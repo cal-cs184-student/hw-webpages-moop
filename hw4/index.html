@@ -162,7 +162,7 @@
 		</div>
 
 		<h2>Part 3: Handling collisions with other objects</h2>
-		<p>Describe your implementation of handling collisions with spheres and planes. TODO</p>
+		<p>In this simulation, collision handling for both planes and spheres ensures that point masses respond realistically when they intersect with these objects. For planes, a collision is detected when a point mass crosses from one side of the plane to the other between time steps, determined by the change in sign of the dot product between the point's position (relative to the plane) and the plane's normal. When a collision is detected, the simulation computes the tangent point—where the point mass would have intersected the plane if it had traveled in a straight line—and adjusts its position to lie slightly above this point on the original side, using a small SURFACE_OFFSET and applying friction to simulate energy loss. For spheres, a collision is detected if the current position of a point mass lies within the sphere's radius. The point is then pushed outward along the vector from the sphere's center to the point mass, placing it exactly on the sphere's surface, and the displacement is scaled down by a friction factor. </p>
 		<p>Here are some screenshots of the shaded cloth from scene/sphere.json in its final resting state on the sphere using the default ks = 5000 as well as with ks = 500 and ks = 50000. I noticed that the smaller the spring constant, the softer the cloth is so the more snugly it wrapped the sphere.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
@@ -184,7 +184,7 @@
 		</div>
 
 		<p>
-			Show us a screenshot of your shaded cloth lying peacefully at rest on the plane. If you haven't by now, feel free to express your colorful creativity with the cloth! (You will need to complete the shaders portion first to show custom colors.) TODO
+			A screenshot of the shaded cloth lying peacefully at rest on the plane.
 		</p>
 		<figure>
 			<img src="pt3plane.png" alt="bleh" style="width:70%"/>
