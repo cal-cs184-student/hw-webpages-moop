@@ -192,7 +192,50 @@
 		</figure>
 
 		<h2>Part 4: Handling self-collisions</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Describe your implementation of handling self-collisions. TODO
+
+		<p>Here are 3 screenshots that document how the cloth falls and folds on itself, starting with an early, initial self-collision and ending with the cloth at a more restful state.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="pt4-1.png" width="350px"/>
+				</td>
+				<td style="text-align: center;">
+					<img src="pt4-2.png" width="350px"/>
+				</td>
+				<td style="text-align: center;">
+					<img src="pt4-3.png" width="350px"/>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		<p>Here, I vary the density as well as ks and observe how they affect the behavior of the cloth as it falls on itself.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="pt4lowdens.png" width="400px"/>
+				  <figcaption>At low density, the cloth falls slower and folds less.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="pt4highdens.png" width="400px"/>
+				  <figcaption>At high density, the cloth falls faster and folds more in the process.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="pt4lowks.png" width="400px"/>
+				  <figcaption>With a low spring constant, the cloth is a lot more wrinkley.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="pt4highks.png" width="400px"/>
+				  <figcaption>With high spring constant, the cloth tries harder to spring back into its original, flat shape.</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 
 		<h2>Part 5: Shaders</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
