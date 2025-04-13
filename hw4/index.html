@@ -74,7 +74,7 @@
 		</div> -->
 
 		<h2>Overview</h2>
-		Give a high-level overview of what you implemented in this homework. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the homework.
+		In this homework, we built a cloth simulator from scratch. First, we built the cloth itself with various spring types to simulate how the cloth pulls on itself. Following that, we transition to seeing the cloth in motion to see the springs actively at work, playing around with the different constants in the process. We modified the spring constant, density constant, and damping constant to get a better understanding of the cloth we build. Then we handled the cloth's interations with other objects as well as itself in the form of collisions. It is super cool to play the animation and see the cloth fall naturally just like in real life! Lastly, to put everything together, we build shaders for the cloth so it can take on different appearances, whether it be reflective, matte, or even a picture of the campanile!
 
 		<h2>Part 1: Masses and springs</h2>
 
@@ -192,7 +192,7 @@
 		</figure>
 
 		<h2>Part 4: Handling self-collisions</h2>
-		Describe your implementation of handling self-collisions. TODO
+		To handle self-collisions, I first create a hash table to be able to quickly search for which PointMass objects need to be checked during the collisions. Then during the process of the collisions, we use the spacial map to get the nearby point masses. For each point mass, we first make sure it is not itself (that would cause some pretty weird behavior..) then compute the distance between the current point mass and the one we are looking at. If they are closer than 2 * thickness distance apart, we apply a repulsion force to move them apart.
 
 		<p>Here are 3 screenshots that document how the cloth falls and folds on itself, starting with an early, initial self-collision and ending with the cloth at a more restful state.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
@@ -238,9 +238,6 @@
 		</div>
 
 		<h2>Part 5: Shaders</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-		<h2>(Optional) Part 6: Extra Credit - Additional cloth simulation features!</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		
 
