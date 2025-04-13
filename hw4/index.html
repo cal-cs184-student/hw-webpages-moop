@@ -238,7 +238,37 @@
 		</div>
 
 		<h2>Part 5: Shaders</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		A shader program includes a vertex shader, which processes each vertex's position and passes data like normals or texture coordinates, and a fragment shader, which calculates the color of each pixel using lighting, textures, and material properties. When they work together, they are able to create lighting and material effects.
+
+		<p>The Blinn-Phong shading model simulates how the light interacts with a surface to produce realistic lighting. It breaks the lighting down to ambient, diffuse, and specular lighting.</p>
+		<figure>
+			<img src="pt5all.png" alt="bleh" style="width:70%"/>
+			<figcaption>Entire Blinn-Phong shading model</figcaption>
+		</figure>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="pt5am.png" width="350px"/>
+				  <figcaption>Just ambient</figcaption>
+				</td>
+				<td style="text-align: center;">
+					<img src="pt5dif.png" width="350px"/>
+					<figcaption>Just diffuse</figcaption>
+				</td>
+				<td style="text-align: center;">
+					<img src="pt5spec.png" width="350px"/>
+					<figcaption>Just specular</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+
+		<p>Show a screenshot of your texture mapping shader using your own custom texture by modifying the textures in /textures/.</p>
+		<figure>
+			<img src="pt5texture.png" alt="bleh" style="width:70%"/>
+			<figcaption>Textures</figcaption>
+		</figure>
 		
 
 	</body>
